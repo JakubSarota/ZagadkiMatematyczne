@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kode+Mono:wght@400..700&family=Young+Serif&display=swap');
+#baner{
+    height: 75px;
+    background-color: #aaf818;
+    border: #100000 solid 1px;
+    margin: 5px;
+}
+#kontener{
+    height: 1000px;
+    width: 100%;
+    background-color: #2a5f07;
+}
+#menu{
+    width: 75%;
+    margin: auto;
+    height: 990px;
+    background-color: azure;
+
+    border: blue solid 2px;
+}
+.zegar{
+    font-family: "Kode Mono" monospace;
+}
+ul{
+    width: 15%;
+    font-size: 15px;
+}
+li{
+    border: black 1px solid;
+    padding: 5px;
+    margin: 20px;
+    list-style: none;
+    text-align: center;
+    background-color: blue;
+    border-radius: 5%;
+}
+li,a{
+    text-decoration: none;
+    color: white;
+}
+li:hover{
+    background-color: #00009f;
+    padding: 10px;
+}
+#dzis{
+    border: black 2px solid;
+    background-color: blue;
+    color: white;
+    width: 15%;
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 3%;
+}
+#stopka{
+    background-color: #aaf818;
+    border: solid 1px black;
+    height: 30px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+}
+#zadaniag{
+    width: 96%;
+    margin: auto;
+    padding: 2%;
+    background-color: rgb(149, 225, 225);
+    height: 1000px;
+}
+#glowne{
+    margin:0% 40%;
+    font-size: 50px;
+}
+#zdjecia{
+    margin: 0% 33%;
+    
+}
+#guzik{
+    background-color: aqua;
+    border: white solid 1px;
+    border-radius: 3%;
+    color: black;
+    width: 100px;
+    height: 40px;
+}
+#punkty{
+    float: right;
+    size: 20px;
+    border: black solid 1px;
+    width: 100px;
+    height: 25px;
+    background-color: darkcyan;
+    color: white;
+    padding-top: 3px;
+    text-align: center;
+    border-radius: 4%;
+    clear: both;
+}

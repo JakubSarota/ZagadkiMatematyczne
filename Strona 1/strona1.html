@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Zagadnki dla dzieci</title>
+    <style>
+        img{
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body onload="losuj()">
+    <div id="baner">
+        <img src="zdjecia/nazwa.png" style="height: auto;width: auto;">
+    </div>
+        <div id="zadaniag">
+            <div id="punkty">Punkty: 0</div>
+   <div id="glowne">
+    <div id="ile"></div>
+    </div>
+
+    <div id="zdjecia">
+        <p>Wybierz znak</p>
+        <label><input type="radio" name="pyt1" value="A" id="r"><img src="zdjecia/rownasie.png"></label>
+        <label><input type="radio" name="pyt1" value="B" id="w"><img src="zdjecia/1200px-Music-diminuendo.svg.png"></label>
+        <label><input type="radio" name="pyt1" value="C" id="m"><img src="zdjecia/znak-mniejszosci.jpg"></label>
+    </div>
+    <button onclick="sprawdz()" id="guzik">Sprawdź</button>
+    <button onclick="losuj()" id="guzik">Pomiń</button>
+        <div id="info" style="text-align: center;"></div>
+    </div>
+    <script>
+        var p=0;
+        var a;
+        var b;
+        function losuj(){
+            var liczba1=Math.floor(Math.random()*101);
+            var liczba2=Math.floor(Math.random()*101);
+            document.getElementById("ile").innerHTML=liczba1+" ? "+liczba2;
+            a=liczba1;
+            b=liczba2;
+            document.getElementById("info").innerHTML=" "
+        }
+        function sprawdz(){
+            var w=document.getElementById("w").checked;
+            var m=document.getElementById("m").checked;
+            var r=document.getElementById("r").checked;
+            if(w==false && m==false && r==false){
+                document.getElementById("info").innerHTML="Nie zaznaczyłeś odpowiedzi";
+            }else if(a>b && w==true){
+                losuj();
+                document.getElementById("info").innerHTML="Poprawana odpowiedź +1";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else if(a<b && m==true){
+                losuj();
+                    document.getElementById("info").innerHTML="Poprawana odpowiedź +1";
+                    p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+                }else if(a==b && r==true){
+                    losuj();
+                    document.getElementById("info").innerHTML="Poprawana odpowiedź +1";
+                    p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+                }else{
+                    document.getElementById("info").innerHTML="Nieporawna odpowiedź. Nie dostajesz punkta";
+                }
+            }
+    </script>
+</div> 
+<div id="stopka"><b>Strona wykonana przez Jakub Sarota</b></div>
+
+
+</body>
+</html>

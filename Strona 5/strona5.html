@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+
+    <title>Document</title>
+</head>
+<body onload="losuj();">
+        <div id="baner">
+        <img src="nazwa.png" style="height: auto;width: auto;">
+    </div>
+    <div id="zadaniag">
+    <div id="punkty">Punkty: 0</div>
+    <div id="kostka1" style="float:left; margin: 20px; margin-left: 70px; width: 50%;"><img src="zdjecia/kosc_1.png" style="float: right;" onclick="losuj();"></div>
+    <div id="kostka2" style="float:left; margin: 20px; width: 30%;"><img src="zdjecia/kosc_1.png" onclick="losuj();"></div>
+    <input type="number" id="d" style="margin-left: 50%; background-color: darkgray;">
+    <p id="wynik"></p>
+    <button onclick="sprawdz();" id="guzik">Sprawdź</button>
+
+
+
+    <script>
+        var p=0;
+        var mnozenie
+        function losuj(){
+            a=Math.round(Math.random()*6+1);
+            document.getElementById("kostka1").innerHTML="<img src='zdjecia/kosc_"+a+".png' style='float: right;'>";
+            b=Math.round(Math.random()*6+1);
+            document.getElementById("kostka2").innerHTML="<img src='zdjecia/kosc_"+b+".png'>";
+            mnozenie=a*b
+        }
+        function sprawdz(){
+            var d=document.getElementById("d").value;
+
+            if(mnozenie==d){
+                losuj();
+                document.getElementById("wynik").innerHTML="Odpowiedziałeś poprawnie +1."
+                p++
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+                
+            }else{
+                losuj();
+                document.getElementById("wynik").innerHTML="Odpowiedziałeś źle.Poprawna odpowiedź to: "+a+" * "+b+" = "+mnozenie;
+            }
+        }
+        function usun(){
+            document.getElementById("kostka2").innerHTML="";
+            document.getElementById("kostka1").innerHTML="";
+
+  
+        }
+    </script>
+    </div>
+</body>
+</html>

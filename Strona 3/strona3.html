@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Dodawanie do 100</title>
+</head>
+<body onload="losuj();">
+    <div id="baner">
+        <img src="nazwa.png" style="height: auto;width: auto;">
+    </div>
+    <div id="zadaniag">
+        <div id="punkty">Punkty: 0</div>
+<div style="width: 100%; text-align: center;">
+    <br><p id="a"></p>
+    <p>+</p>
+    <p id="b"></p>
+    <p>=</p>
+    </div>
+    <input type="number" id="d" style="margin: 0 44%;">
+    <button onclick="sprawdz()" id="guzik">Sprawdź</button>
+    <button onclick="losuj()" id="guzik">Pomiń</button>
+    <p id="e" style="text-align: center;"></p>
+    <script>
+        var p=0;
+        function losuj(){
+            do{
+                a=Math.floor(Math.random()*1001);
+                b=Math.floor(Math.random()*1001);
+            }while(a+b>1000)
+            document.getElementById("a").innerHTML=a;
+            document.getElementById("b").innerHTML=b;
+        }
+        function sprawdz(){
+            odp=document.getElementById("d").value;
+
+            if(odp!=a+b){
+                document.getElementById("e").innerHTML="<B>Niepoprawna odpowiedź</B>";
+            }else{
+                losuj();
+                document.getElementById("e").innerHTML="<B>Poprawna odpowiedź +1 </B>";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }
+
+        }
+    </script>
+    </div>
+</body>
+</html>

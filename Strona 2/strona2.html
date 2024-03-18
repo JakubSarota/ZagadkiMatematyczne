@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Zagadnki dla dzieci</title>
+    <style>
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body onload="losuj()">
+    <div id="baner">
+        <img src="nazwa.png" style="height: auto;width: auto;">
+    </div>
+    <div id="zadaniag">
+        <div id="punkty">Punkty: 0</div>
+    <div id="figura" style="margin: 0 45% ;"></div>
+
+    <p style="text-align: center;">Wybierz nazwę z listy</p>
+    <select name="figury" style="margin: 0 45%;">
+        <option id="odpa">kwadrat</option>
+        <option id="odpb">trójkąt</option>
+        <option id="odpc">koło</option>
+        <option id="odpd">trapez</option>
+        <option id="odpe">gwiazda</option>
+        <option id="odpf">inna figura</option>
+    </select>
+    <button onclick="sprawdz()" id="guzik">Sprawdź</button>
+    <button onclick="losuj()" id="guzik">Pomiń</button>
+    <div id="wynik" style="text-align: center;"></div>
+    <script>
+        var a;
+        var p=0;
+        function losuj(){
+            a=Math.round(Math.random()*4+1);
+            document.getElementById("figura").innerHTML="<img src='picture/fig"+a+".png'>";
+            document.getElementById("wynik").innerHTML=" ";
+        }
+        function sprawdz(){
+            var kw=document.getElementById("odpa").selected;
+            var ko=document.getElementById("odpc").selected;
+            var tr=document.getElementById("odpb").selected;
+            var tra=document.getElementById("odpd").selected;
+            var gw=document.getElementById("odpe").selected;
+            
+            if(a==1 && kw==true){
+                losuj();
+                document.getElementById("wynik").innerHTML="Poprawana odpowiedź +1";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else if(a==2 && tr==true){
+                losuj();
+                document.getElementById("wynik").innerHTML="Poprawana odpowiedź +1"; 
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else if(a==3 && ko==true){
+                losuj();
+                document.getElementById("wynik").innerHTML="Poprawana odpowiedź +1";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else if(a==4 && tra==true){
+                losuj();
+                document.getElementById("wynik").innerHTML="Poprawana odpowiedź +1";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else if(a==5 && gw==true){
+                losuj();
+                document.getElementById("wynik").innerHTML="Poprawana odpowiedź +1";
+                p++;
+                document.getElementById("punkty").innerHTML="Punkty: "+p;
+            }else{
+                document.getElementById("wynik").innerHTML="Nieporawna odpoweidź. Nie dostajesz punkta";
+            }
+            }
+    </script>
+</div> 
+</div>
+<div id="stopka"><b>Strona wykonana przez Jakub Sarota</b></div>
+
+</body>
+</html>
